@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link rel="stylesheet/less" type="text/css" href="main.less" />
+    <link rel='stylesheet' href="css/styles.css">
+    <script src="less.js" type="text/javascript"></script>  
+    <script src='index.js' defer></script>
+</head>
+<body>
+    <main>
+        <h1 id='hide'>Weather App With Open weather A P I</h1>
+        <section class='searchbar'>
+            <form id='searchbar-form' role='search'></form>
+                <input id='searchbar-text' class='searchbar-text' type='text' role='searchbox' size='40' autocomplete='off' placeholder="city, state, Country">
+                <button id='searchbar-button' class='searchbar-button' title='Submit Location' aria-label="Enter Zip Code or City, State, and County to retrieve weather conditions">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+        </section>
+        <section id='currentforecast' role='region' aria-labelledby="weatherLocation">
+            <h2 id='currentforecastLocation' class='currentforecastLocation'>Current Conditions</h2>
+            <div id='currentforecastConditions' class='currentforecastConditions'> </div>
+        </section>
+        <nav id='navButtons' class='navButtons'>
+            <button id='getLocation' class='button' title='Get Location' aria-label='Get the current weather conditions for your current location'>
+                <i class="fas fa-search-location"></i>
+                <i class="fas fa-spinner fa-pulse none"></i>
+            </button>
+            <button id='home' class='button' title='Home weather' aria-label='Get the current weather conditions for your home location'>
+                <i class="fas fa-home"></i>
+                <i class="fas fa-spinner fa-pulse none"></i>
+            </button>
+            <button id='saveLocation' class='button' title='Save Location' aria-label='Save the current locations as your home location'>
+                <i class="fas fa-save"></i>
+                <i class="fas fa-spinner fa-pulse none"></i>
+            </button>
+            <button id='unit' class='button' title='Toggle Measurement Units' aria-label='Toggle between Farenheight and Celcius'>
+                <i class="fas fa-thermometer-half"></i>
+                <i class="fas fa-spinner fa-pulse none"></i>
+            </button>
+            <button id='refresh' class='button' title='Refresh Weather' aria-label='REfresh the current weather conditions'>
+                <i class="fas fa-sync-alt"></i>
+                <i class="fas fa-spinner fa-pulse none"></i>
+            </button>
+        </nav>
+        <hr>
+        <section id='dailyforecast'class='dailyforecast' role='region' aria-labelledby="dailforecastTitle">
+            <h2 id='dailforecastTitle' class='dailforecastTitle'>Six Day Forecast</h2>
+            <div id='dailyforecastContent' class='dailforecastTitle'></div>
+        </section>
+        <p id='confirmation' class='offscreen' aria-live='assertive'></p>
+    </main>
+</body>
+</html>
+
