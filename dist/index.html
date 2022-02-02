@@ -9,22 +9,41 @@
     <link rel="stylesheet/less" type="text/css" href="main.less" />
     <link rel='stylesheet' href="css/styles.css">
     <script src="less.js" type="text/javascript"></script>  
-    <script src='index.js' defer></script>
+    <script src='/dist/js/index.js' type='module' defer></script>
 </head>
 <body>
     <main>
-        <h1 id='hide'>Weather App With Open weather A P I</h1>
         <section class='searchbar'>
-            <form id='searchbar-form' role='search'></form>
-                <input id='searchbar-text' class='searchbar-text' type='text' role='searchbox' size='40' autocomplete='off' placeholder="city, state, Country">
+            <form id='searchbar-form' role='search'>
+                <input id='searchbar-text' class='searchbar-text' type='text' role='searchbox' size='40' autocomplete='off' placeholder="City, State, County or Zip Code">
                 <button id='searchbar-button' class='searchbar-button' title='Submit Location' aria-label="Enter Zip Code or City, State, and County to retrieve weather conditions">
                     <i class="fas fa-search"></i>
                 </button>
             </form>
         </section>
+        <section>
+            <div>
+                <h2 class='currentLocation'>Current Location</h2>
+            </div>
+        </section>
         <section id='currentforecast' role='region' aria-labelledby="weatherLocation">
-            <h2 id='currentforecastLocation' class='currentforecastLocation'>Current Conditions</h2>
-            <div id='currentforecastConditions' class='currentforecastConditions'> </div>
+            <div id='currentforecastConditions' class='currentforecastConditions'> 
+                <div class='weatherHead'>
+                    <div class='temp'>59°<div class='unit'>F</div></div>
+                    <div class='icon' id='icon'> <i class='far fa-sun' aria-hidden='true' title='clear-sky'></i></div>
+                </div>
+                <div class='weatherHighLow'>
+                    <div class='maxTemp'>High: 62°</div>
+                    <div class='minTemp'>Low: 39°
+                    </div>
+                </div>
+                <div class='details'>
+                    <div class='desc'>Clear Sky</div>
+                    <div class='feels'>Feels Like: 53°</div>
+                    <div class='humidity'>Humidity: 44%</div>
+                    <div class='wind'>Wind: 4 mph</div>
+                </div>
+            </div>
         </section>
         <nav id='navButtons' class='navButtons'>
             <button id='getLocation' class='button' title='Get Location' aria-label='Get the current weather conditions for your current location'>

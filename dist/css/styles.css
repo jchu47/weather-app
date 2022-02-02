@@ -5,9 +5,10 @@
 }
 
 html {
-  background-color: #5c85d6;
+  background-image: url('/dist/css/clouds.jpeg');
+  background-color: #4d0099;
   font-size: 16px;
-  font-family: 'Montserrat', 'sans-serif';
+  font-family: 'helvetica';
   font-weight: bold;
   letter-spacing: 1px;
   color: #f2f2f2;
@@ -20,6 +21,18 @@ body {
   width: 100%;
   min-height: 100vh;
   padding: 0.5rem;
+  animation: fadeInAnimation ease 4s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 0.8;
+   }
 }
 
 main {
@@ -31,7 +44,7 @@ main {
   max-width: 700px;
   max-height: 1050px;
   flex-grow: 1;
-  background-color: #4775d1;
+  background-color: #4d0099;
   border: 1px solid #f2f2f2;
   border-radius: 10px;
   box-shadow: 3px 3px 2.5px black;
@@ -52,6 +65,8 @@ hr {
   width: 90%;
   margin: auto;
   border: 1px solid #f2f2f2;
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
 
 .none {
@@ -62,6 +77,15 @@ hr {
   display: block;
 }
 
+nav {
+  width: 100%;
+  display: inline-flex;
+  justify-content: space-around;
+  align-items: flex-end;
+
+}
+
+
 .button {
   min-height: 48px;
   min-width: 48px;
@@ -69,18 +93,26 @@ hr {
   border: 1px solid #f2f2f2;
   font-size: 1.25rem;
   font-weight: bold;
-  background-color: #4775d1;
-  color: #f2f2f2; 
+  opacity: 100%;
+  color: #4d0099; 
 }
 
 .button:hover {
   cursor: pointer;
+  background-color: #f2f2f2;
+  color: grey;
 }
 
 .button:hover, button:focus {
-  box-shadow: 4px 2px 5px #5c85d6;
   border-color: #f2f2f2;
-  font-size: 1.50rem;
+  font-size: 1.35rem;
+}
+
+#searchbar-form {
+  display:flex;
+  border: 2px solid #f2f2f2;
+  border-radius: 30px;
+  background-color: #4d0099;
 }
 
 .searchbar {
@@ -92,26 +124,136 @@ hr {
 #searchbar-text {
   display: flex;
   justify-content: space-between;
-  border: 1px solid #f2f2f2;
-  border-radius: 20px;
-  background-color: #5c85d6;
+  border: none;
+  background-color: transparent;
   height: 48px;
-  
 }
+
+.searchbar-text:focus {
+  outline: none;
+}
+
+input[type=text] {
+  color: white;
+  padding-left: 35px;
+}
+
 
 .searchbar-button {
   min-height: 48px;
   min-width: 48px;
   border-radius: 50%;
-  border: 1px solid #f2f2f2;
+  border: 2px solid white;
   font-size: 1.25rem;
   font-weight: bold;
-  background-color: #4775d1;
-  color: #f2f2f2; 
+  background-color: white;
+  color: #4d0099; 
 }
+
+.searchbar-button:hover {
+  cursor: pointer;
+}
+
+.searchbar-button:hover, button:focus {
+  border-color: #f2f2f2;
+  font-size: 1.35rem;
+}
+
 
 ::placeholder {
   color: white;
+  padding-left: 20px;
+}
+
+/*  Set height after dynamically adding weather variables
+*/
+.currentforecastConditions {
+  height: 450px;
+  width: 100%;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 40px;
+  padding-left: 20px;
+  padding-top: 20px;
 }
 
 
+
+#dailyforecastContent {
+  height: 200px;
+}
+
+
+/*  Styling for current condition div */
+
+#currentforecast {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.weatherHead {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 5px;
+}
+
+
+.icon {
+  font-size: 70px;
+  display: inline-flex;
+  justify-content: flex-end;
+  align-self: flex-end;
+  padding-right: 20%;
+  padding-bottom: 0%;
+}
+
+.temp {
+  display: inline-flex;
+  font-size: 100px;
+  padding-left: 2%;
+  padding-bottom: 20px;
+  flex-grow: 1;
+  text-shadow: 5px 2px black;
+}
+
+.unit {
+  font-size: 30px;
+  font-weight: lighter;
+  align-self: flex-end;
+  color: #bfbfbf;
+  padding-bottom: 5%;
+}
+
+.weatherHighLow {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+  margin-right: 13%;
+}
+
+.minTemp{
+  color: #bfbfbf;
+}
+
+.maxTemp, .minTemp {
+  font-size: 30px;
+  align-self: flex-end;
+  justify-self: flex-start;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 25px;
+}
+
+.humidity, .wind {
+  color: #bfbfbf
+}
